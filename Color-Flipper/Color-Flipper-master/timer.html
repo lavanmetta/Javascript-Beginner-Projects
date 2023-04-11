@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGColorChanger</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+    <nav class="shadow-lg">
+        <div class="d-flex flex-row justify-content-between align-content-center">
+            <h4>Color Flipper</h4>
+            <ul class="flex d-flex flex-row">
+                <li>
+                    <a  href="app.html">Normal</a>
+                </li>
+                <li>
+                    <a  href="hex.html">Random</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="text-center p-5 box shadow-lg">
+            <h2 class="text-center"> Timer Background Color <br/><br/> <span class="color">
+                #ffffff
+            </span></h2>
+            
+            <button class="btn btn-info" id="click">Click Me</button>
+            <p class="timer"></p>
+        </div>
+    </main>
+    <script src="./timer.js"></script>
+</body>
+</html>
