@@ -3,7 +3,9 @@ const spinner = document.getElementById("spinner");
 const counter = document.getElementById("counter");
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
+const resetBtn = document.getElementById("reset");
 const infos = document.getElementById("infos");
+const myElement = document.getElementById("myElement");
 const url = "https://api.quotable.io/random";
 
 let count = 0;
@@ -17,6 +19,10 @@ function timer() {
   }, 1000);
 }
 
+function startTimer() {
+  timer();
+}
+
 function typingTest() {
   fetch(url)
     .then((response) => response.json())
@@ -27,18 +33,35 @@ function typingTest() {
 }
 typingTest();
 
-input.addEventListener("keydown", function () {
-    if (!countId) {
-        timer();
-      }
+input.addEventListener("keydown", () => {
+  if (!countId) {
+    startTimer();
+  }
 });
 
-submit.addEventListener('click', function() {
-    if (randomSentence.textContent === input.value) {
-        infos.textContent = "Congratulations"
-        clearInterval(countId)
-    }
-    else {
-        infos.textContent = "Sorry"
-    }
-})
+submit.addEventListener("click", function () {
+  if (randomSentence.textContent === input.value) {
+    infos.textContent = "Congratulations You typed in " + count + " seconds";
+    infos.style.color = "green";
+    clearInterval(countId);
+  } else {
+    infos.textContent = "Sentence Does Not Matched";
+    infos.style.color = "red";
+  }
+});
+
+resetBtn.addEventListener("click", function () {
+  count = 0;
+  setInterval(timer());
+  typingTest();
+  input.value = "";
+  infos.textContent = "";
+});
+
+
+
+
+myElement.addEventListener("copy", function (event) {
+  event.preventDefault();
+  event.clipboardData.setData("text/plain", "");
+});

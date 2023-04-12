@@ -73,7 +73,7 @@ p {
 }
 
 .add {
-    display: initial;
+    display: inline;
 }
 
 .remove {

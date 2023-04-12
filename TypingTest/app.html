@@ -8,35 +8,54 @@
     <link rel="stylesheet" href="./app.css" />
   </head>
   <body>
-    <div class="main-container">
-        <div class="header">
-            <h1>TYPING TEST</h1>
-            <h1 id="counter">00</h1>
-        </div>
-      
+    <div class="main-container" id="myElement">
+      <div class="header">
+        <h1>TYPING TEST</h1>
+        <h1 id="counter">00</h1>
+      </div>
+
       <div class="second-container">
-        <svg id="spinner" version="1.1" id="L9" class="spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-          <path fill="#fff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
-            <animateTransform 
-               attributeName="transform" 
-               attributeType="XML" 
-               type="rotate"
-               dur="1s" 
-               from="0 50 50"
-               to="360 50 50" 
-               repeatCount="indefinite" />
-        </path>
-      </svg>
+        <svg
+          id="spinner"
+          version="1.1"
+          id="L9"
+          class="spinner"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 100 100"
+          enable-background="new 0 0 0 0"
+          xml:space="preserve"
+        >
+          <path
+            fill="#fff"
+            d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+          >
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="1s"
+              from="0 50 50"
+              to="360 50 50"
+              repeatCount="indefinite"
+            />
+          </path>
+        </svg>
         <p id="randomSentence"></p>
         <textarea
-        id="input"
+          id="input"
           type="text"
           placeholder="when you start typing automatically timer is started"
         ></textarea>
       </div>
-     <button id="submit">Submit</button>
-     <h2 id="infos">Successfully typed in <span>55</span> seconds</h2>
+      <div>
+        <button id="submit">Submit</button>
+        <button id="reset">Reset</button>
+      </div>
+
+      <h2 id="infos"></h2>
     </div>
   </body>
   <script src="./app.js"></script>
