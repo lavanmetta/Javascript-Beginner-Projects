@@ -58,9 +58,6 @@ resetBtn.addEventListener("click", function () {
   infos.textContent = "";
 });
 
-
-
-
 myElement.addEventListener("copy", function (event) {
   event.preventDefault();
   event.clipboardData.setData("text/plain", "");
