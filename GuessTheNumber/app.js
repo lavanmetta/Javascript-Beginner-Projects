@@ -26,7 +26,8 @@ let tooLow = "Too Low 👇";
 let tooHigh = "Too High 👆";
 let correct = "Yahooo! Correct 🥳😎";
 
-let heighScore = 0;
+let heighScore = parseInt(localStorage.getItem("score")) || 0;
+console.log(heighScore);
 let normalScore = 0;
 
 function checkingResults() {
@@ -38,15 +39,21 @@ function checkingResults() {
   } else {
     instructorHeading.textContent = correct;
     document.querySelector(".main-container").classList.add("bg");
-    score.textContent = normalScore++;
-    if (normalScore > heighScore) {
-      heighScore = normalScore;
-    }
-    localStorage.setItem("score", normalScore.toString());
+    normalScore += 1;
+    score.textContent = normalScore;
+    heighestScore.textContent = normalScore;
+      // Update and store the heighScore in localStorage
+      if (normalScore > heighScore) {
+        heighScore = normalScore;
+        localStorage.setItem("score", heighScore.toString());
+      }
+    
 
     resetFunction();
   }
 }
+
+
 
 checkResults.addEventListener("click", function () {
   checkingResults();
@@ -61,6 +68,5 @@ resetButton.addEventListener("click", function () {
 
 const savedScore = localStorage.getItem("score");
 if (savedScore) {
-  normalScore = parseInt(savedScore);
-  heighestScore.textContent = normalScore;
+  heighestScore.textContent = parseInt(savedScore);
 }
