@@ -12,25 +12,22 @@ function randomNumberGenerator() {
   return randomNum;
 }
 let randomInteger = randomNumberGenerator();
-randomNumber.textContent = randomInteger;
 
 // reset
 
 function resetFunction() {
   inputNums.value = "";
   randomInteger = randomNumberGenerator();
-  randomNumber.textContent = randomInteger;
-  
 }
 
 // Checking
 
-let tooLow = "Too Low";
-let tooHigh = "Too High";
-let correct = "Guessed Number correct";
+let tooLow = "Too Low 👇";
+let tooHigh = "Too High 👆";
+let correct = "Yahooo! Correct 🥳😎";
 
-let heighScore = 1;
-let normalScore = 1;
+let heighScore = 0;
+let normalScore = 0;
 
 function checkingResults() {
   let inputInteger = inputNums.value;
@@ -40,11 +37,13 @@ function checkingResults() {
     instructorHeading.textContent = tooLow;
   } else {
     instructorHeading.textContent = correct;
-    document.querySelector('.main-container').classList.add('bg')
+    document.querySelector(".main-container").classList.add("bg");
     score.textContent = normalScore++;
-    if (normalScore < heighScore) {
+    if (normalScore > heighScore) {
       heighScore = normalScore;
     }
+    localStorage.setItem("score", normalScore.toString());
+
     resetFunction();
   }
 }
@@ -54,7 +53,14 @@ checkResults.addEventListener("click", function () {
 });
 
 resetButton.addEventListener("click", function () {
-    resetFunction()
-    score.textContent = 0
-    instructorHeading.textContent = 'Guessing Number...'
+  resetFunction();
+  score.textContent = 0;
+  instructorHeading.textContent = "Guessing Number...";
+  localStorage.removeItem("score");
 });
+
+const savedScore = localStorage.getItem("score");
+if (savedScore) {
+  normalScore = parseInt(savedScore);
+  heighestScore.textContent = normalScore;
+}
