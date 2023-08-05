@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./app.css" type="text/css" />
+    <title>Modal Window</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="heading">🤩 Modal Windows 🤩</h1>
+      <div class="button-container">
+        <button class="modal-btn">Show Modal-1</button>
+        <button class="modal-btn">Show Modal-2</button>
+        <button class="modal-btn">Show Modal-3</button>
+      </div>
+
+      <!-- modal window -1 -->
+      <div class="modal-container hidden" >
+        <h3 class="cancel-btn" >✖️</h3>
+        <div class="modal-inner-container">
+          <h3 id="header">Modal window example one 🤗</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+            eum, alias debitis placeat non amet labore hic impedit ab magni,
+            dignissimos sed maiores nam repellendus? Incidunt, aperiam maiores!
+            Sint, eos.
+          </p>
+        </div>
+      </div>
+      <div class="overly hidden" id="overly"></div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

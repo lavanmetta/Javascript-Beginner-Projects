@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  margin: 0;
+}
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.main {
+  width: 100%;
+  height: 95vh;
+}
+
+.heading {
+  text-align: center;
+  padding: 1rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button-container > button {
+  width: 150px;
+  height: 50px;
+  border-radius: 35px;
+  border: none;
+  background-image: linear-gradient(rgb(253, 61, 99), crimson);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+.modal-btn:hover {
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+  color: black;
+  border: 3px solid crimson;
+  transition: all 100ms ease-in-out;
+}
+
+.modal-container {
+  background-color: rgb(255, 255, 255);
+  width: 400px;
+  padding: 2rem;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+}
+
+.overly {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+  z-index: 5;
+  /* Make sure the blurred background appears below the modal */
+}
+
+.cancel-btn {
+  text-align: right;
+  margin: 0;
+  cursor: pointer;
+
+}
+
+.hidden {
+  display: none;
+}
